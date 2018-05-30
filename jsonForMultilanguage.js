@@ -38,7 +38,7 @@ function convertSheet2Json(sheet) {
   for(var columnIndex=1; columnIndex<=lastColumn; columnIndex++) {
     for(var rowIndex=1; rowIndex<=lastRow; rowIndex++) {
       var cell = sheet.getRange(rowIndex, columnIndex);
-      var value = cell.getValue();
+      var value = cell.getValue().replace(/\r?\n/g, "<br />");
       cellValues.push(value);
     }
   }
